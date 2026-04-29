@@ -301,6 +301,10 @@
       margin: 0 0.3rem;
     }
 
+    .floating-paypal {
+      display: none;
+    }
+
     /* Mobile */
     @media (max-width: 768px) {
       .page {
@@ -318,12 +322,60 @@
       .hero-badge h1 { font-size: 0.9rem; }
 
       .content {
-        padding: 1.2rem;
+        padding: 1.2rem 1.2rem calc(1.2rem + 72px);
         overflow-y: auto;
         justify-content: flex-start;
       }
 
       .stats { gap: 1rem; }
+
+      .pay-buttons .pay-btn.paypal {
+        display: none;
+      }
+
+      .donate-section h3 {
+        display: none;
+      }
+
+      .goal {
+        margin-bottom: 0;
+      }
+
+      .donate-section {
+        display: none;
+      }
+
+      .other-ways {
+        margin-top: 0.6rem;
+        padding-top: 0.6rem;
+      }
+
+      .floating-paypal {
+        display: flex;
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        bottom: max(1rem, env(safe-area-inset-bottom));
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.2rem;
+        background: #0070ba;
+        color: #fff;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+        z-index: 100;
+      }
+
+      .floating-paypal svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+      }
     }
   </style>
 </head>
@@ -421,6 +473,11 @@
       </div> -->
     </div>
   </div>
+
+  <a href="https://www.paypal.com/ncp/payment/768B65EC9RKWN" target="_blank" class="floating-paypal" aria-label="Donate with PayPal">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 2.9A.779.779 0 0 1 5.71 2.2h7.024c2.37 0 4.024.506 4.912 1.506.418.47.675 1.003.787 1.632.117.663.058 1.454-.18 2.418l-.013.056v.49l.382.216c.324.17.582.363.78.58.33.362.544.822.634 1.365.093.559.062 1.205-.09 1.92-.176.824-.462 1.543-.852 2.135a4.42 4.42 0 0 1-1.357 1.385c-.543.36-1.19.625-1.92.787a10.172 10.172 0 0 1-2.42.264H12.85a.96.96 0 0 0-.948.814l-.033.186-.568 3.6-.025.134a.96.96 0 0 1-.948.814H7.076z"/></svg>
+    Donate with PayPal
+  </a>
 
   <script>
     const amountBtns = document.querySelectorAll('.amount-btn:not(.custom)');
